@@ -8,12 +8,40 @@ class Main {
         Scanner myObj = new Scanner(System.in);
         System.out.println("calculator");
 
+        String[] inputs = {"", ""};
         String input = myObj.nextLine();
-        String operators[] = {"\\+"};
-        String[] inputs = input.split("\\+");
+        myObj.close();
 
-        for(String a : inputs){
-            System.out.println(a);
+        String operator="";
+
+        String operators[] = {"+", "-", "*", "/"};
+        String operators1[] = {"\\+", "-", "\\*", "/"};
+
+        for(int i=0;i<4;i++){
+            if(input.contains(operators[i])){
+                inputs = input.split(operators1[i], 2);
+                operator=operators[i];
+                break;
+            }
         }
+
+        int output = 0;
+
+        switch(operator){
+            case "+":
+                output=Integer.parseInt(inputs[0])+Integer.parseInt(inputs[1]);
+                break;
+            case "-":
+                output=Integer.parseInt(inputs[0])-Integer.parseInt(inputs[1]);
+                break;
+            case "*":
+                output=Integer.parseInt(inputs[0])*Integer.parseInt(inputs[1]);
+                break;
+            case "/":
+                output=Integer.parseInt(inputs[0])/Integer.parseInt(inputs[1]);
+                break;
+        }
+
+        System.out.println(output);
     }
 }
