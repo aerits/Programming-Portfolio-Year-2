@@ -1,16 +1,16 @@
 import java.util.Scanner;
 
-class Main {
+class calculator {
 
   public static void main(String[] args) {
+    Scanner scan = new Scanner(System.in);
     // loops the code if you enter an invalid operator
     for (int x = 0; x < 1;) {
       // clears the screen
       System.out.print("\033[H\033[2J");
       System.out.flush();
 
-      // welcome user, create thing to get input
-      Scanner scan = new Scanner(System.in);
+      // welcome user
       System.out.println("it\'s calculatin\' time");
       System.out.print("type in an expression: ");
 
@@ -41,10 +41,11 @@ class Main {
       x++;
 
       // commit math
+      try {
       switch (operator) {
         default:
           // go back into the for loop because invalid operator
-          System.out.println("please enter a valid operator");
+          System.out.println("please enter a valid operator (+, -, *, /)");
           input = scan.nextLine();
           x = 0;
           break;
@@ -60,10 +61,16 @@ class Main {
         case "/":
           output = Integer.parseInt(inputs[0]) / Integer.parseInt(inputs[1]);
           break;
+      }}
+      catch(NumberFormatException a){
+        System.out.println("please enter a valid expression (only 2 numbers)");
+        input = scan.nextLine();
+        x = 0;
       }
 
       // print out the result to the expression
       System.out.println(output);
     }
+  scan.close();
   }
 }
