@@ -76,12 +76,6 @@ class calculator {
 
       // print out the result to the expression
       System.out.println(output);
-
-      System.out.println("want to calculate more?");
-      input = scan.nextLine();
-      if (input!="no"){
-        x = 0;
-      }
     }
     scan.close();
   }
