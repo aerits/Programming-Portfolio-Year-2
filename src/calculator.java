@@ -63,6 +63,7 @@ class calculator {
             System.out.println("remainder: " + Double.parseDouble(inputs[0]) % Double.parseDouble(inputs[1]));
             break;
         }
+        // stop problems
       } catch (NumberFormatException a) {
         System.out.println("please enter a valid expression (only 2 numbers)");
         input = scan.nextLine();
