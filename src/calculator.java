@@ -35,35 +35,40 @@ class calculator {
       }
 
       // initialize variable
-      int output = 0;
+      double output = 0.0;
 
       // increment variable to end for loop
       x++;
 
       // commit math
       try {
-      switch (operator) {
-        default:
-          // go back into the for loop because invalid operator
-          System.out.println("please enter a valid operator (+, -, *, /)");
-          input = scan.nextLine();
-          x = 0;
-          break;
-        case "+":
-          output = Integer.parseInt(inputs[0]) + Integer.parseInt(inputs[1]);
-          break;
-        case "-":
-          output = Integer.parseInt(inputs[0]) - Integer.parseInt(inputs[1]);
-          break;
-        case "*":
-          output = Integer.parseInt(inputs[0]) * Integer.parseInt(inputs[1]);
-          break;
-        case "/":
-          output = Integer.parseInt(inputs[0]) / Integer.parseInt(inputs[1]);
-          break;
-      }}
-      catch(NumberFormatException a){
+        switch (operator) {
+          default:
+            // go back into the for loop because invalid operator
+            System.out.println("please enter a valid operator (+, -, *, /)");
+            input = scan.nextLine();
+            x = 0;
+            break;
+          case "+":
+            output = Double.parseDouble(inputs[0]) + Double.parseDouble(inputs[1]);
+            break;
+          case "-":
+            output = Double.parseDouble(inputs[0]) - Double.parseDouble(inputs[1]);
+            break;
+          case "*":
+            output = Double.parseDouble(inputs[0]) * Double.parseDouble(inputs[1]);
+            break;
+          case "/":
+            output = Double.parseDouble(inputs[0]) / Double.parseDouble(inputs[1]);
+            System.out.println("remainder: " + Double.parseDouble(inputs[0]) % Double.parseDouble(inputs[1]));
+            break;
+        }
+      } catch (NumberFormatException a) {
         System.out.println("please enter a valid expression (only 2 numbers)");
+        input = scan.nextLine();
+        x = 0;
+      } catch (ArithmeticException a) {
+        System.out.println("the calculator says you can't divide by 0");
         input = scan.nextLine();
         x = 0;
       }
@@ -71,6 +76,6 @@ class calculator {
       // print out the result to the expression
       System.out.println(output);
     }
-  scan.close();
+    scan.close();
   }
 }
