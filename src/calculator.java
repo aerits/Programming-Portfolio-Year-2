@@ -11,8 +11,7 @@ class calculator {
       System.out.flush();
 
       // welcome user
-      System.out.println("it\'s calculatin\' time");
-      System.out.print("type in an expression: ");
+      System.out.print("it\'s calculatin\' time\ntype in an expression: ");
 
       // get input
       String[] inputs = { "", "" };
@@ -60,7 +59,6 @@ class calculator {
             break;
           case "/":
             output = Double.parseDouble(inputs[0]) / Double.parseDouble(inputs[1]);
-            System.out.println("remainder: " + Double.parseDouble(inputs[0]) % Double.parseDouble(inputs[1]));
             break;
         }
         // stop problems
@@ -69,7 +67,7 @@ class calculator {
         input = scan.nextLine();
         x = 0;
       } catch (ArithmeticException a) {
-        System.out.println("the calculator says you can't divide by 0");
+        System.out.println("bruh moment: try again");
         input = scan.nextLine();
         x = 0;
       }
