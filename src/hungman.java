@@ -1,6 +1,6 @@
 public class hungman {
     public static void main(String[] args) {
-        int percent=80;
+        int percent=90;
         int bruh = (percent/(100/7));
         System.out.println(bruh);
         switch (bruh) {
