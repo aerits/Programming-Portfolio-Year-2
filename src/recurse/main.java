@@ -1,5 +1,5 @@
 /*
-  main.java -- recursion
+  main.java -- recursion for fun
 */
 
 public class Main {
