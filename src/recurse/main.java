@@ -1,5 +1,7 @@
 /*
   main.java -- recursion for fun
+
+  maze escape? 
 */
 
 public class Main {
